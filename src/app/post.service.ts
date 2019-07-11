@@ -19,4 +19,10 @@ export class PostService {
   getPostById(id: number): Observable<IPost> {
     return this.http.get<IPost>(`${this.API_URL}/${id}`);
   }
+  createPost(post: Partial<IPost>): Observable<IPost> {
+    return this.http.post<IPost>(this.API_URL, post);
+  }
+  deletePost(id: number): Observable<any> {
+    return this.http.delete(`${this.API_URL}/${id}`);
+  }
 }
