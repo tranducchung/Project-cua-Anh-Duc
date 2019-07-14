@@ -1,4 +1,4 @@
-<div *ngIf="post; else nothing">
+<div *ngIf="post">
   <h4>
     {{post.title}}
   </h4>
@@ -7,6 +7,24 @@
   </p>
 </div>
 
-<ng-template #nothing>
+<div *ngIf="comments">
+  <h3>Comments:</h3>
+  <a [routerLink]="['/comment-create']">create new comment</a>
+
+  <ul>
+    <li *ngFor="let comment of comments; index as i">
+      <h4>
+      <a [routerLink]="['/comment', comment.id]">
+        Comment id: {{comment.id}} - {{comment.name}}
+      </a>
+      </h4>
+      <a [routerLink]="['/comment',comment.id,'edit']">Edit</a>  |
+      <button (click)="deleteComment(i)"> Delete</button>
+
+    </li>
+  </ul>
+</div>
+
+<ng-template>
   <p>Nothing to show</p>
 </ng-template>

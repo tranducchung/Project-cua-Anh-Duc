@@ -3,6 +3,9 @@ import {Routes, RouterModule} from '@angular/router';
 import {BlogComponent} from './blog/blog.component';
 import {BlogDetailComponent} from './blog-detail/blog-detail.component';
 import {BlogEditComponent} from './blog-edit/blog-edit.component';
+import {CommentDetailComponent} from './comment-detail/comment-detail.component';
+import {CommentCreateComponent} from './comment-create/comment-create.component';
+import {CommentEditComponent} from './comment-edit/comment-edit.component';
 
 const routes: Routes = [{
   path: 'blog',
@@ -11,6 +14,22 @@ const routes: Routes = [{
   {
     path: 'blog/:id',
     component: BlogDetailComponent
+  },
+  {
+    path: 'blog/:id/edit',
+    component: BlogEditComponent
+  },
+  {
+    path: 'comment/:id',
+    component: CommentDetailComponent
+  },
+  {
+    path: 'comment-create',
+    component: CommentCreateComponent
+  },
+  {
+    path: 'comment/:id/edit',
+    component: CommentEditComponent
   }
 ];
 

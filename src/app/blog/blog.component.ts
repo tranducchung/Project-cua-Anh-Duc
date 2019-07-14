@@ -19,7 +19,7 @@ export class BlogComponent implements OnInit {
 
   ngOnInit() {
     this.postForm = this.fb.group({
-      title: ['', [Validators.required, Validators.minLength(10)]],
+      title: ['', Validators.required],
       body: ['', [Validators.required, Validators.minLength(10)]],
     });
     this.postService
@@ -39,7 +39,6 @@ export class BlogComponent implements OnInit {
         }, error => console.log(error));
     }
   }
-
   deletePost(i) {
     const post = this.postList[i];
     this.postService.deletePost(post.id).subscribe(() => {
