@@ -9,7 +9,6 @@ import { BlogComponent } from './blog/blog.component';
 import { BlogEditComponent } from './blog-edit/blog-edit.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { CommentDetailComponent } from './comment-detail/comment-detail.component';
-import { CommentCreateComponent } from './comment-create/comment-create.component';
 import { CommentEditComponent } from './comment-edit/comment-edit.component';
 
 @NgModule({
@@ -19,7 +18,6 @@ import { CommentEditComponent } from './comment-edit/comment-edit.component';
     BlogEditComponent,
     BlogDetailComponent,
     CommentDetailComponent,
-    CommentCreateComponent,
     CommentEditComponent
   ],
   imports: [

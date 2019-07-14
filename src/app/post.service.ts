@@ -49,4 +49,7 @@ export class PostService {
   updateComment(comment: Comment): Observable<Comment> {
     return this.http.put<Comment>(`${this.API_URL2}/${comment.id}`, comment);
   }
+  getAllComment(): Observable<Comment[]> {
+    return this.http.get<Comment[]>(this.API_URL2);
+  }
 }

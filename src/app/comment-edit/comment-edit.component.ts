@@ -47,11 +47,14 @@ export class CommentEditComponent implements OnInit {
       };
       this.postService.updateComment(data).subscribe(
         next => {
+          console.log('edit comment success');
+          console.log(next);
           this.router.navigate(['/blog']);
         },
         error => console.log(error)
       );
     }
   }
+
 
 }

@@ -7,9 +7,46 @@
   </p>
 </div>
 
+<h3>create a new comment</h3>
+<form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>
+      name
+      <br>
+      <input type="text" formControlName="name">
+    </label>
+  </div>
+  <div *ngIf="commentForm.get('name').invalid && commentForm.get('name').touched" style="color: red">
+    Title is required
+  </div>
+
+  <div>
+    <label>
+      email
+      <br>
+      <input type="text" formControlName="email">
+    </label>
+  </div>
+
+  <div *ngIf="commentForm.get('email').invalid && commentForm.get('email').touched" style="color: red">
+    Title is required
+  </div>
+  <div>
+    <label>
+      body
+      <br>
+      <textarea formControlName="body" cols="30" rows="10"></textarea>
+    </label>
+  </div>
+  <div *ngIf="commentForm.get('body').invalid && commentForm.get('body').touched" style="color: red">
+    Body is required and min length is 10
+  </div>
+  <button type="submit">Submit</button>
+</form>
+
 <div *ngIf="comments">
   <h3>Comments:</h3>
-  <a [routerLink]="['/comment-create']">create new comment</a>
+<!--  <a [routerLink]="['/comment-create']">create new comment</a>-->
 
   <ul>
     <li *ngFor="let comment of comments; index as i">
@@ -24,6 +61,7 @@
     </li>
   </ul>
 </div>
+
 
 <ng-template>
   <p>Nothing to show</p>

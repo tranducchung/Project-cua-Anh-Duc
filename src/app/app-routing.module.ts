@@ -4,7 +4,6 @@ import {BlogComponent} from './blog/blog.component';
 import {BlogDetailComponent} from './blog-detail/blog-detail.component';
 import {BlogEditComponent} from './blog-edit/blog-edit.component';
 import {CommentDetailComponent} from './comment-detail/comment-detail.component';
-import {CommentCreateComponent} from './comment-create/comment-create.component';
 import {CommentEditComponent} from './comment-edit/comment-edit.component';
 
 const routes: Routes = [{
@@ -22,10 +21,6 @@ const routes: Routes = [{
   {
     path: 'comment/:id',
     component: CommentDetailComponent
-  },
-  {
-    path: 'comment-create',
-    component: CommentCreateComponent
   },
   {
     path: 'comment/:id/edit',
